@@ -1,0 +1,18 @@
+<h1 class="card highlight-card">Featured artists!</h1>
+<section class="card-container">
+    <div *ngFor="let a of artists" class = "card" (click)="onSelect(a)">
+       <a href="#"> {{ a.name }} </a>
+    </div>
+</section>
+<section *ngIf="selectedArtist">
+    <h2>Artist Details</h2>
+    <fieldset>
+        <label class="lbl">ID:</label>
+        <input [(ngModel)]="selectedArtist.id" />
+    </fieldset>
+    <fieldset>
+        <label class="lbl">Name:</label>
+        <input [(ngModel)]="selectedArtist.name" />
+    </fieldset>
+    <button (click)="clearArtist()" class="btn">Hide</button>
+</section>
